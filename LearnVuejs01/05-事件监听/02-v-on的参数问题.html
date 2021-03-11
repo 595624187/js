@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <button @click="btn1Click()">按钮1</button>
+    <button @click="btn1Click">按钮1</button>
+<!--    会将浏览器生成的MouseEvent时间当作参数-->
+    <button @click="btn2Click">按钮2</button>
+
+<!--    除了event对象又需要其他参数-->
+<!--    如何获取到浏览器参数的event对象：$event-->
+    <button @click="btn3Click('abc',$event)">按钮3</button>
+    <button>按钮4</button>
+</div>
+<script>
+    const app = new Vue({
+        el:'#app',
+        data: {
+            message:'你好'
+        },
+        methods:{
+            btn1Click(){
+                console.log('btnclick')
+            },
+            btn2Click(abc){
+                console.log('--',abc);
+            },
+            btn3Click(abc ,event){
+                console.log('++++',abc,event)
+            }
+        }
+    })
+</script>
+</body>
+</html>

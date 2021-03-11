@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        .active{
+            color:red;
+        }
+        /*17*/
+    </style>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-bind:class="getClass()" v-on:click="liClick" v-for="(m,index) in movies">{{index}}-{{m}}</li>
+    </ul>
+</div>
+<script>
+    const app = new Vue({
+        el:'#app',
+        data: {
+            movies:['海外桑','的空间士大夫','的快捷方式的看法','sdfsddsf'],
+            active:'active',
+            isActive:'true',
+        },
+        methods:{
+            liClick:function(){
+                this.isActive=!this.isActive;
+                console.log(this.$el)
+            },
+            getClass:function(){
+                return {active:this.isActive}
+            }
+        }
+    })
+</script>
+</body>
+</html>

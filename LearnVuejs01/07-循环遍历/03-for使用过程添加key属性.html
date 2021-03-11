@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+<!--        加入key后，添加元素时可以直接插入，具有唯一性-->
+        <li v-for="i in letters" :key="item">{{i}}</li>
+    </ul>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el:'#app',
+        data:{
+            message:'你好',
+            letters:['A','B','C','D','E'],
+        }
+    })
+</script>
+</body>
+</html>

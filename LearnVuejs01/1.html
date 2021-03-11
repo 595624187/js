@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{message}}
+
+</div>
+<script src="js/vue.js"></script>
+<script>
+  function unique(arr){
+    for(var i=0; i<arr.length; i++){
+      for(var j=i+1; j<arr.length; j++){
+        if(arr[i]==arr[j]){         //第一个等同于第二个，splice方法删除第二个
+          arr.splice(j,1);
+          j--;
+        }
+      }
+    }
+    return arr;
+  }
+  
+  arr = [2,3,4,2,4,1,1,2,33,4,5,5];
+  console.log(unique(arr));
+</script>
+</body>
+</html>

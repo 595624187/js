@@ -1,0 +1,57 @@
+*{
+  padding:0;
+  margin:0;
+}
+#app{
+  width:600px;
+  height:250px;
+  border:1px solid black;
+}
+ul>li{
+  list-style: none;
+  display: inline-block;
+  height: 30px;
+  background: white;
+}
+ul>li:first-child,:last-child{
+  width:8%;
+  padding:2px;
+
+}
+
+ul>li:not(:first-child,:last-child){
+  width:17%;
+}
+ul{
+  width:580px;
+  height:30px;
+  text-align: center;
+  line-height:20px;
+  padding: 5px;
+  background:seashell;
+  font-weight: bold;
+}
+ul:first-child>li{
+  background: seashell;
+}
+.change{
+  outline: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  border: 1px solid green;
+  font-size: large;
+  margin: 6px;
+}
+.left{
+  float:left
+}
+.right{
+  float:right
+}
+.total{
+  width: 150px;
+  height: 40px;
+  margin: 18px;
+}
+

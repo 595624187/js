@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+    <ul class="title">
+        <li>编号</li>
+        <li>书籍名称</li>
+        <li>出版日期</li>
+        <li>价格</li>
+        <li>数量</li>
+        <li>操作</li>
+    </ul>
+    <ul v-for="(item,index) in market">
+        <li>{{index}}</li>
+        <li>{{item.name}}</li>
+        <li>{{item.date}}</li>
+        <li>￥{{item.price}}</li>
+        <li>
+            <button class="change left" @click="item.num--">-</button>
+            {{item.num}}
+            <button class="change right" @click="item.num++">+</button>
+        </li>
+        <button @click="remove(index)">移除</button>
+    </ul>
+    <span class="total">总价:￥{{total}}</span>
+</div>
+
+<script src="../js/vue.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
