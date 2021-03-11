@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <script>
+        $(function(){
+            //创建属性，不是节点属性，要在httpwatch中查看
+            $("span").eq(0).prop("demo","it555");
+            $("span").eq(1).prop("demo","inj");
+            console.log($("span").prop("demo"));
+            //输出指定属性
+            // $("span").removeProp("demo");
+            console.log($("span"));
+            $("span").prop("class","box");
+
+            console.log($("input").prop("checked"));
+            console.log($("input").attr("checked"));
+            /*
+            注意：
+            prop不仅能操作属性，也能操作节点属性
+             */
+        });
+    </script>
+</head>
+<body>
+<span class="span1" name="it555"></span>
+<span class="span2" name="jin"></span>
+<input type="checkbox" checked>
+</body>
+</html>

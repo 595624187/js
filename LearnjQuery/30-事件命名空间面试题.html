@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <style>
+        *{
+            margin:0;
+            paddin:0;
+
+        }
+        .father{
+            width:200px;
+            height:200px;
+            background:pink;
+        }
+        .son{
+            width:100px;
+            height:100px;
+            background:blue;
+        }
+    </style>
+    <script>
+        $(function(){
+            //用trigger触发子元素带命名空间的元素
+            //那么父元素带相同的命名空间的事件也会
+            //触发，而父元素没有命名空间的事件不会被触发
+            $(".father").on("click.ls",function(){
+                alert("father click1");
+            });
+            $(".father").on("click",function(){
+                alert("father click2");
+            });
+            $(".son").on("click.ls",function(){
+                alert(" son click1");
+            });
+            // $(".son").trigger("click.ls");
+            $(".son").trigger("click");
+        });
+    </script>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<a href="http://www.baidu.com"><span>百度一下</span></a>
+<form action="http://www.taobao.com">
+    <input type="text">
+    <input type="submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <script>
+        var arr = [1,2,3,4];
+        arr.forEach(function(value,index){
+            // console.log(index,value);
+        });
+        var obj = {0:1,1:2,3:5,length:5}
+        //each只能遍历数组，不能便利伪数组
+
+        $.each(arr,function(index,value){
+            // console.log(index,value)
+        })
+        $.each(obj,function(index,value){
+            console.log(index,value)
+        })
+        //jQuery的each方法可以遍历伪数组
+    </script>
+</head>
+<body>
+
+</body>
+</html>

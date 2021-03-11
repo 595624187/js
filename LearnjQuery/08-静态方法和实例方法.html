@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <script>
+        function AClass(){
+
+        }
+        AClass.staticMethod = function(){
+            alert('aaa')
+        }
+        //静态方法通过类名调用
+        AClass.staticMethod();
+        AClass.prototype.instanceMethod = function(){
+            alert("instance");
+        }
+        AClass.prototype.a = function (){
+            alert('b');
+        }
+        //实例方法通过类的实例调用
+        //创建实例
+        var a = new AClass();
+        a.instanceMethod();
+        a.a();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <script>
+        $(function(){
+            //两种绑定事件方式
+            //可以添加多个相同或不同的事件，不会覆盖
+            //1.eventName(fn);
+            //编码效率高
+            $("button").click(function(){
+                alert("hello");
+            })
+            //2.on(eventName,fn);
+            //编码效率低
+            /*$("button").on("click",function(){
+                alert("hello hij2")
+            })
+            $("button").mouseleave(function(){
+                alert("leave");
+            })
+            $("button").mouseenter(function(){
+                alert("enter");
+            })*/
+            $("button").on("click",function(){
+                alert("hello click1")
+            })
+            $("button").on("click",function(){
+                alert("hello click2")
+            })
+            $("button").on("mouseleave",function(){
+                alert("hello mouseleave")
+            })
+            $("button").on("mouseenter",function(){
+                alert("hello mouseenter")
+            })
+        });
+    </script>
+</head>
+<body>
+<button>按钮</button>
+</body>
+</html>

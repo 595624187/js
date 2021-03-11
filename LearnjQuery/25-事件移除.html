@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <script>
+        $(function(){
+            function test1(){
+                alert("hello");
+
+            }
+            $("button").click(test1)
+            $("button").on("mouseleave",function(){
+                alert("hello mouseleave")
+            })
+            // $("button").on("mouseenter",function(){
+            //     alert("hello mouseenter")
+            // })
+            // $("button").off();
+            //移除所有事件
+            $("button").off("mouseleave");
+            //指定类型的指定事件
+            $("button").off("mouseleave",test1);
+
+        });
+    </script>
+</head>
+<body>
+<button>按钮</button>
+</body>
+</html>

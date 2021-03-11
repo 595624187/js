@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+
+    </style>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                //内部操作
+                //创建一个节点
+                var $li = $("<li>新增的li</li>");
+                //在末尾添加 两种方法
+                // $("ul").append($li);
+                // $li.appendTo("ul");
+
+                //在开头添加
+                // $("ul").prepend($li);
+                // $li.prependTo("ul");
+
+                //外部操作
+                // $("ul").after($li);
+                // $li.insertAfter("ul");
+
+                // $("ul").before($li);
+                // $li.insertBefore("ul");
+            });
+        });
+    </script>
+</head>
+<body>
+<button>添加节点</button>
+<ul>
+    <li>我是第1个li</li>
+    <li>我是第2个li</li>
+    <li>我是第3个li</li>
+</ul>
+</body>
+</html>

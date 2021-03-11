@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <script>
+        var arr = [1,2,3,4];
+        var obj = {0:1,1:2,3:5,length:5}
+        //1.利用原生JS的map方法
+        arr.map(function(value,index,array){
+            console.log(index,value,array);
+        });
+        //第一个参数：要遍历的数组
+        //第二个参数：遍历到的索引
+        //map可以遍历伪数组
+        $.map(obj,function(value,index){
+            console.log(index,value);
+        });
+
+        var res = $.each(obj,function(value,index){
+            console.log(index,value);
+        });
+        var res2 = $.map(obj,function(value,index){
+            console.log(index,value);
+            return index+':'+value;
+        });
+        console.log(res);
+        console.log(res2);
+        //each和map方法的区别：
+        //each静态方法默认的返回值是，遍历谁就返回谁
+        //map静态方法默认的返回值是一个空数组
+
+        //each静态方法不支持在回调函数中对遍历的数组进行处理
+        //map静态方法可以在回调函数中通过return对遍历的数组进行处理，
+        //然后生成一个新的数组返回
+    </script>
+</head>
+<body>
+
+</body>
+</html>

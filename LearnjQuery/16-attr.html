@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <script>
+        $(function(){
+            //返回第一个元素指定属性节点的值
+            console.log($("span").attr("class"));
+            //找到多少个就设置多少个元素
+            $("span").attr("class","box");
+            //若设置的属性不存在，那么系统会自动生成
+            $("span").attr("abc",123);
+            $("span").removeAttr("class");
+        });
+    </script>
+</head>
+<body>
+<span class="span1" name="IT555"></span>
+<span class="span2" name="inj"></span>
+</body>
+</html>

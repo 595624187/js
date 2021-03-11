@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <script>
+        window.onload = function(e){
+            //1.通过原生的JS入口函数可以拿到DOM元素
+            var img = document.querySelector('img');
+            console.log(img);
+            //2.通过原生的JS入口函数可以拿到DOM元素的高宽
+            var width = window.getComputedStyle(img).width;
+            console.log(width);
+
+            alert("hello 1");
+
+        }
+        window.onload = function(){
+            alert("hello 2");
+        }
+        //jQuery的固定写法
+        $(document).ready(function(){
+            //1.通过jQuery入口函数可以拿到DOM元素
+            var $img = $("img");
+            console.log($img);
+            //2.通过jQuery入口函数可以拿到DOM元素的宽高
+            var $width = $img.width();
+            console.log($width);
+        });
+        //1.原生JS如果编写了多个入口函数，后面的会覆盖前面的
+        //2.jQuery中编写多个入口函数，后面的不会覆盖前面的
+        $(document).ready(function(e){
+            alert("hello 11");
+        })
+        $(document).ready(function(e){
+            alert("hello 22");
+        })
+    </script>
+</head>
+<body>
+<img src="https://www.baidu.com/img/flexible/logo/pc/result.png"alt="">
+</body>
+</html>

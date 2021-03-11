@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0
+        }
+        .father{
+            width:200px;
+            height:200px;
+            background:red;
+
+        }
+        .son{
+            width:100px;
+            height:100px;
+            background: blue;
+        }
+    </style>
+    <script>
+        $(function(){
+            //mouseover事件，子元素被移入移出也会触发事件
+           /* $(".father").mouseover(function(){
+                console.log("移入了")
+            })
+            $(".father").mouseout(function(){
+                console.log("移出了")
+            }) */
+            /*$(".father").mouseenter(function(){
+                console.log("移入了")
+            })
+            $(".father").mouseleave(function(){
+                console.log("移出了")
+            })*/
+            /*
+            $(".father").hover(function(){
+               console.log("移入了");
+           },function(){
+                console.log("移出了");
+            })
+            */
+            //移入移出都触发
+            $(".father").hover(function(){
+                console.log("移入了移除了");
+            })
+
+        });
+    </script>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <script>
+        $(function(){
+            //1.给按钮添加点击事件
+            var btn = document.querySelector("button");
+            btn.onclick = function(){
+                var input = document.querySelector("input");
+                var text = input.value;
+                $("img").attr("src",text);
+                //https://img10.360buyimg.com/img/jfs/t1/159353/17/2928/457625/5ffd107fE2b4a7a10/e0ab266497850f64.gif
+
+            }
+            //2.获取输入框输入的内容
+            //3.修改img的src属性节点的值
+        });
+    </script>
+</head>
+<body>
+<input type="text">
+<button>切换图片</button><br>
+<img src="https://www.baidu.com/img/dong_8f1d47bcb77d74a1e029d8cbb3b33854.gif"alt=""></img>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+    /*    192  108*/
+        div{
+            width:354px;
+            height:216px;
+            background: pink;
+            margin:100px auto;
+            overflow: hidden;
+        }
+        ul{
+            width:1770px;
+            height:216px;
+            /*border:1px solid black;*/
+            background: black;
+        }
+        ul>li{
+            float:left;
+            list-style: none;
+        }
+    </style>
+    <script>
+        $(function(){
+            //1.让图片滚动抵赖
+            var offset = 0;
+            var timer;
+            function autoPlay(){
+                timer = setInterval(function(){
+                    offset -= 10;
+                    if(offset<=-1416){
+                        offset=0;
+                    }
+                    $("ul").css("marginLeft",offset);
+                },50)
+            }
+            autoPlay();
+            //2.监听li的移入和移出事件
+            $("li").hover(function(){
+                clearInterval(timer);
+                //添加蒙版
+                $(this).siblings().fadeTo(100,0.5);
+                //去除当前选中的蒙版
+                $(this).fadeTo(100,1);
+            },function(){
+                autoPlay();
+                $("li").fadeTo(100,1);
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div>
+    <ul>
+        <li><img src="image/1.jpg"></li>
+        <li><img src="image/2.jpg"></li>
+        <li><img src="image/3.jpg"></li>
+        <li><img src="image/4.jpg"></li>
+        <li><img src="image/1.jpg"></li>
+
+    </ul>
+</div>
+</body>
+</html>

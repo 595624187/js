@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+
+    </style>
+    <script>
+        $(function(){
+            $("button").eq(0).click(function(){
+                //浅复制一个元素
+                var $li = $("li:first").clone(false);
+                //将赋值的元素添加到ul中
+                $("ul").append($li);
+            })
+            $("button").eq(1).click(function(){
+                //深复制一个元素
+                var $li = $("li:first").clone(true);
+                //将赋值的元素添加到ul中
+                $("ul").append($li);
+            })
+            //深复制可以复制元素事件
+            $("li").click(function(){
+                alert($(this).html());
+            })
+        });
+    </script>
+</head>
+<body>
+<button>浅复制节点</button>
+<button>深复制节点</button>
+<ul>
+    <li>我是第1个li</li>
+    <li>我是第2个li</li>
+    <li>我是第3个li</li>
+    <li>我是第4个li</li>
+    <li>我是第5个li</li>
+    <li>我是第6个li</li>
+</ul>
+</body>
+</html>

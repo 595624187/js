@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <script>
+        var str = "      inj       ";
+        console.log("---"+str+"-----");
+        var res = $.trim(str);
+        //去除两端的空格 返回字符串
+        console.log("---"+res+"-----");
+
+        var arr = [1,3,5,7];
+        var arrlike = {0:1,3:4,5:9,4:2,length:5};
+        var obj = {"name":"inj",age:"33"};
+        var fn = function(){};
+        var w = window;
+        //window 对象s
+        var res = $.isWindow(arr);
+        //判断是否window对象
+        console.log($.isWindow(arr))
+        console.log($.isWindow(arrlike))
+        console.log($.isWindow(obj))
+        console.log($.isWindow(fn))
+        console.log($.isWindow(w))
+        console.log($.isArray(arr))
+        //判断是否是真数组
+        console.log($.isArray(arrlike))
+        console.log($.isFunction(fn))
+    </script>
+</head>
+<body>
+
+</body>
+</html>

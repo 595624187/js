@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <script>
+        //jQuery的固定写法
+        //1.释放$的使用权
+        // jQuery.noConflict();
+        //2.自定义一个访问符号
+        var bj = jQuery.noConflict();
+        bj(function(){
+            alert("a");
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

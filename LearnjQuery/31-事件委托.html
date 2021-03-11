@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <script>
+        $(function(){
+            /*
+            1.事件委托
+            请别人帮忙做事情，然后将做完的结果反馈给我们
+
+             */
+            $("button").click(function(){
+                $("ul").append("<li>我是新增的li</li>")
+            })
+            //jQuery中通过核心函数找到的元素不止一个，那么在添加事件
+            //的时候jQuery会遍历所有找到的元素，给所有找到的元素添加事件
+            //隐式遍历
+            // $("ul>li").click(function(){
+            //     console.log($(this).html());
+            // })
+            //委托事件
+            $("ul").delegate("li","click",function(){
+                    console.log($(this).html());
+
+            })
+        });
+    </script>
+</head>
+<body>
+<button>新增一个li</button>
+
+<ul>
+    <li>我是第1个li</li>
+    <li>我是第2个li</li>
+    <li>我是第3个li</li>
+</ul>
+</body>
+</html>

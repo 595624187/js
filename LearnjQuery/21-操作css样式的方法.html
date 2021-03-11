@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1/jquery.js"></script>
+    <script>
+        $(function(){
+            //设置css方法3种
+            //逐个设置
+            $("div").css("width","100px");
+            $("div").css("height","100px");
+            $("div").css("background","pink");
+            //链式操作
+            $("div").css("width","100px").css("height","100px").css("background","blue");
+            //批量设置  推荐
+            $("div").css(
+                {
+                    width:"120px",
+                    height:"100px",
+                    background:"yellow"
+                }
+            )
+
+            //获取css值
+            console.log($("div").css("width"));
+            console.log($("div").css("height"));
+            console.log($("div").css("background"));
+        });
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>
